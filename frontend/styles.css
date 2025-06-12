@@ -1,0 +1,261 @@
+/* ========== General Layout ========== */
+body {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ========== Navigation ========== */
+nav {
+  width: 100%;
+  background-color: white;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-icon {
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+  margin-right: 20px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: rgba(16, 210, 119, 0.872);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ========== Buttons ========== */
+button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.model-button:hover {
+  background-color: #0055aa;
+}
+
+.model-button {
+  background-color: #4CAF50;
+  padding: 15px 32px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Containers & Sections ========== */
+.container {
+  max-width: 1000px;
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+}
+
+.model-section {
+  background-size: cover;
+  background-position: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 130px;
+}
+
+@media (max-width: 550px) {
+  .model-section {
+    height: 130px;
+  }
+}
+
+#mainContent {
+  padding-bottom: 20px;
+}
+
+.bottom-space {
+  height: 50px;
+}
+
+/* ========== Upload & Popup ========== */
+input[type="file"],
+input[type="text"] {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close,
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close:hover,
+.close:focus,
+.close-btn:hover {
+  color: #e00;
+}
+
+/* ========== Spinner / Loading ========== */
+.loading-spinner {
+  margin: 80px auto 20px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========== Content Presentation ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  overflow-x: auto;
+  font-family: Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+.model-instructions {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.model-instructions img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.model-instructions p {
+  font-size: 14px;
+  color: #444;
+}
+
+#aboutUsContent {
+  width: 600px;
+  text-align: center;
+  padding: 20px;
+}
+
+#aboutUsContent img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ========== Model Specific Popups ========== */
+#linearRegressionPopup {
+  background-image: url('Linear Regression Example Image.png');
+}
+
+#randomForestPopup {
+  background-image: url('Random Forest Example Image.png');
+}
+
+#neuralNetworkPopup {
+  background-image: url('Neural Network Example Image.png');
+}
+
+#linearRegressionReportPopup,
+#randomForestReportPopup,
+#neuralNetworkReportPopup {
+  background-image: none;
+}
+
+/* ========== Footer & Headers ========== */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer-nav button {
+  margin: 0;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(#e66465, #9198e5);
+  color: white;
+}

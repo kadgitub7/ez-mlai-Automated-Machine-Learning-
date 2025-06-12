@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EZ-MLAI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <img src="assets/images/ICONFinal.png" class="nav-icon">
+      <ul class="nav-items">
+        <li><button class="nav-button" onclick="showHome()">Home</button></li>
+        <li><button class="nav-button" onclick="showModelOptions()">Models</button></li>
+        <li><button class="nav-button" onclick="showDescriptions()">Descriptions</button></li>
+        <li><button class="nav-button" onclick="showAbout()">About Us</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="mainContent" class="container">
+    <div class="header">
+      <h1>EZ-MLAI</h1>
+      <h2>Easy Access to Machine Learning AI</h2>
+        <h2>No Matter Your Experience Level</h2>
+    </div>
+    <h3><b>Want to use AI, but don't know how to code? Or are you an experienced coder who doesn't want to be hassled with intricacies?</b></h3>
+    <small>Then EZ-MLAI is for you. You can customize machine-learning models for an assortment of the most popular models and get model metrics in graphs and digits, all with just a dataset and no coding</small>
+    <h3><h3>
+    <img src="assets/images/UserPathwayFinal.png" style="width: 700px; height: 600px;" alt="User Pathway">
+    <h4>EZ-MLAI provides various accommodations and allows for easy machine-learning model building. All you need is a dataset that fits the model parameters listed under each specific model. We provide choices from a list of the 6 most popular Machine Learning algorithms to choose from to build your model. Build Your Novel Machine Learning Model Today.</h4>
+    <p>Explore our machine-learning models by navigating to the Models page and learn more about key vocab from the Model Descriptions page.</p>
+      <h4>Data and the corresponding Models that you should use:</h4>
+      <p>Fully numerical features with a continuous numeric target: Linear Regression</p>
+      <p>Mixed categorical and numerical features with a numeric target: Random Forest</p>
+      <p>Complex relationships or non-linear patterns in tabular data: Neural Network</p>
+      <p>A mix of numerical and categorical independent variables and categorical dependent variables: Either K-Nearest-Neighbor or Naive Bayes</p>
+      <p>Numerical features with a categorical target: Support Vector Machine</p>
+      <div class="bottom-space"></div>
+  </main>
+
+  <!-- Generic Popup -->
+  <div id="modelPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('modelPopup')">&times;</span>
+      <h2 id="popupTitle">Upload Dataset</h2>
+      <input type="file" id="modelFileInput" accept=".csv">
+      <input type="text" id="targetColumnInput" placeholder="Enter target column name">
+      <p id="errorMsg"></p>
+      <button onclick="uploadAndRunModel()">Run Model</button>
+    </div>
+  </div>
+
+  <!-- Report Display Popup -->
+  <div id="reportPopup" class="popup">
+    <button class="close-btn" onclick="closePopup('reportPopup')">×</button>
+    <div class="popup-content" id="reportContent">
+      <!-- Model results go here -->
+    </div>
+  </div>
+
+  <div id="loadingPopup" class="popup" style="display: none; text-align: center;">
+    <div class="loading-spinner"></div>
+    <p style="margin-top: 20px;">Processing model... Please wait.</p>
+  </div>
+
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/upload.js"></script>
+  <script src="scripts/render.js"></script>
+  <script src="scripts/knn.js"></script>
+  <script src="scripts/svm.js"></script>
+  <script src="scripts/naive_bayes.js"></script>
+  <script src="scripts/neural_network.js"></script>
+  <script src="scripts/random_forest.js"></script>
+  <script src="scripts/linear_regression.js"></script>
+</body>
+</html>
